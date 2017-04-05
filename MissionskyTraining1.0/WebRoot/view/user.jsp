@@ -128,11 +128,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	#addU{width:300px;height:150px;display:none;border:1px solid gray;position:absolute;top:100px;left:200px;background-color:#D0D0D0;border-radius:6px;}
 	#exit_addU{position:absolute;top:2px;right:2px;cursor:pointer;}
 	</style>
+	
+	<link rel="stylesheet" href="layui/css/layui.css" media="all" />
 
   </head>
   
   <body>
-    <button id="addUser">添加用户</button>
+    <button id="addUser" class="layui-btn">添加用户</button>
     <div id="addU">
     <button id="exit_addU">X</button>
     <table>
@@ -140,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr><td colspan=2><span id="userName_msg"></span></td></tr>
   <tr><td>密码</td><td><input type="password" id="password" name="password"/></td></tr>
   <tr><td colspan=2><span id="password_msg"></span></td></tr>
-  <tr><td colspan=2><button onclick="return addUser();">添加</button></td></tr>
+  <tr><td colspan=2><button onclick="return addUser();" class="layui-btn-small">添加</button></td></tr>
     </table>
     </div>
   </body>

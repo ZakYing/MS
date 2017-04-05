@@ -26,6 +26,11 @@
 
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 
+<style type="text/css">
+	.imgs img{
+		witdth:100%;
+	}
+</style>
 
 </head>
 
@@ -58,8 +63,8 @@
 
 <div class="clear"></div>
 
-<div>
-	<center><h1>Missionsky培训网站系统登录</h1></center>
+<div class="imgs">
+	<img src="img/bc.jpg" />
 </div>
 
 <div class="loginmask"></div>

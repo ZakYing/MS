@@ -16,6 +16,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">  
 	<script type="text/javascript" src="js/jquery-1.8.3.js"></script> 
 	<link rel="stylesheet" href="layui/css/layui.css" media="all" />
+	
+ 	<script type="text/javascript" src="layui/layui.js"></script>
+ 	<script type="text/javascript" src="layui/lay/dest/layui.all.js"></script> 
+	
     <script type="text/javascript">
       function attachment_download(attachmentName)
       {
@@ -71,18 +75,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		if(isSelected==true)
 		{
-        if(confirm("确定删除吗?"))
+        if(confirm('确定删除吗?'))
         {
              document.formlist.action="attachment_delete.do";
 		     document.formlist.submit();
         }
         }else
         {
-            alert("您还没有选择任何项！");
+            layer.alert("您还没有选择任何项！");
 			return false;
         }
       }
+      
     </script>
+    
+    
+    
 	<style type="text/css">
 	.myFileUpload{border:1px solid #19A093;border-radius:6px;background-color:#F2F2F2;}
 	input[type=checkbox]{margin:2px 2px 0 30px; float:left; vertical-align:middle;margin-top:3px!important ;margin-top:0px;}

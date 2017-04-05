@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	  List<Menu> menuList=(List<Menu>)request.getSession().getAttribute("menuList");
 	 %>
   
-  <body>
+  <body style="background-color: grey;">
       <ul id="lev1">
         <%
          //先展示一级菜单

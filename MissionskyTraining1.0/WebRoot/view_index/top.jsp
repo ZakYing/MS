@@ -34,13 +34,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
 		</style>
 	</head>
-	<body>
+	<body style="background-color: aqua;">
 			<div class="top">
 				<a href=""> <img src="img/ms.png" class="img" /></a>
 				<span><a href="#" target="_self">MissionSky Inc.</a></span>
 				<span style="width: 100px; display: inline-block;"></span>
 				<center style="display: inline-block; font-size: 24px;"><a href="#"><strong>凌云新创信息科技培训网站</strong></a></center>
 				<a href="logout.do" target="_parent" style="float: right;">退出</a>
+			</div>
+			<div>
+					<span style="float:right"> 欢迎您,<strong style="color:red">${user.userName}</strong></span>		
 			</div>
 	</body>
 </html>

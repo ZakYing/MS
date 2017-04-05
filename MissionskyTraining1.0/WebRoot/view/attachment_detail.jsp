@@ -14,8 +14,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
-    <script type="text/javascript" src="js/jquery-1.8.3.js"></script> 
+	
 	<link rel="stylesheet" href="layui/css/layui.css" media="all" />
+	
+    <script type="text/javascript" src="js/jquery-1.8.3.js"></script> 
+    <script type="text/javascript" src="layui/lay/dest/layui.all.js"></script> 
+	
+	
+	
     <script type="text/javascript">
       function attachment_download(attachmentName)
       {
@@ -24,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             type:"post",
             data:{attachmentName:attachmentName},
             success:function(data){
-               alert(data);
+               layer.alert(data);
             }
          });
       }
