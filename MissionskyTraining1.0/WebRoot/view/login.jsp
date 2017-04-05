@@ -43,7 +43,7 @@
 
         <li class="openlogin"><a href="#" onclick="return false;">登录</a></li>
 
-        <li class="reg"><a href="#" onclick="return false;">注册</a></li>
+     <!--    <li class="reg"><a href="#" onclick="return false;">注册</a></li> -->
 
       </ul>
 
@@ -80,13 +80,13 @@
 
         <div class="fl">会员登录</div>
 
-        <div class="fr">还没有账号<a id="sigup_now" href="http://www.jq22.com/" onclick="return false;">立即注册</a></div>
+        <!-- <div class="fr">还没有账号<a id="sigup_now" href="#" onclick="return false;">立即注册</a></div> -->
 
         <div class="clear"></div>
 
       </div>
 
-      <h3><span>邮箱登录</span><span class="login_warning">用户名或密码错误</span>
+      <h3><!-- <span>邮箱登录</span> --><span class="login_warning">用户名或密码错误</span>
 
         <div class="clear"></div>
 
@@ -137,7 +137,7 @@
     </div>
 
   </div>
-
+<!-- 
   <div class="thirdlogin">
 
     <div class="pd50">
@@ -158,7 +158,7 @@
 
     </div>
 
-  </div>
+  </div> -->
 
 </div>
 
@@ -170,14 +170,13 @@
 
   <div id="setp_quicklogin">
 
-    <h3>您可以选择以下第三方帐号直接登录jQuery插件库，一分钟完成注册</h3>
+    <h3>一分钟完成注册</h3>
 
     <ul class="quicklogin_socical">
 
-      <li class="quicklogin_socical_weibo"><a href="#">微博帐号注册</a></li>
+		<li class="quicklogin_socical_weibo"><a href="#">微博帐号注册</a></li>
 
       <li class="quicklogin_socical_qq"><a href="#">QQ帐号注册</a></li>
-
     </ul>
 
   </div>
@@ -189,6 +188,45 @@
 	<script type="text/javascript" src="js/jquery.easing.min.js"></script>
 	
 	<script type="text/javascript" src="js/custom.js"></script>
+	
+	<script type="text/javascript">
+		function KeyDown(){
+			if (event.keyCode==13){
+				   subForm();
+				}
+			}
+		function subForm() {
+			//alert(checkInput());
+			if(checkInput()){
+					var form = document.getElementById("login_form");
+					form.submit();
+					return true;
+				}
+			return false;
+		}
+
+		function checkInput(){
+
+	        //判断用户名
+
+	        if($("input[name=userName]").val() == null || $("input[name=userName]").val() == ""){
+	            alert("用户名不能为空");
+	            $("input[name=userName]").focus();
+	            return false;
+
+	        }
+
+	        //判断密码
+
+	        if($("input[name=password]").val() == null || $("input[name=password]").val() == ""){
+
+	            alert("密码不能为空");
+	            $("input[name=password]").focus();
+	            return false;
+
+	        }
+		}
+	</script>
 	
 </body>
 </html>
