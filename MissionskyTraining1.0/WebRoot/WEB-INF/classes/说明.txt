@@ -1,0 +1,7 @@
+文件路径管理:
+
+菜单图标文件上传路径: tomcat/webapp/missionsky.trainging1.0/menuImg
+
+附件上传路径: tomcat/webapp/missionsky.trainging1.0/attachment
+
+附件下载路径:PC机下默认downloads文件夹路径 ,形如 "C:\Users\andy.li\Downloads";

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.missionsky.training.dao.AttachmentDao"> 
+<cache></cache>
+<insert id="addAttachment" parameterType="Attachment">
+    insert into Attachment (attachmentName,attachmentSize,uploadDate,uploadUser) values(#{attachmentName},#{attachmentSize},#{uploadDate},#{uploadUser})
+</insert>
+
+<select id="getRowcount"  resultType="int">
+    select count(*) rowCount from Attachment
+</select>
+
+<select id="getRowcountByCondition" parameterType="String" resultType="int">
+    select count(*) rowCount from Attachment where attachmentName like concat(concat('%',#{QueryName}),'%')
+</select>
+
+<select id="getAttachmentByPage" parameterType="PageData" resultMap="GetAttachmentInfo">
+   select * from Attachment a,UserInfo u where a.uploadUser=u.userId order by uploadDate desc limit #{start_index},#{end_index}
+</select>
+
+<select id="queryAttachmentByPage" parameterType="PageData" resultMap="GetAttachmentInfo">
+    select * from Attachment a,UserInfo u where a.uploadUser=u.userId and a.attachmentName like concat(concat('%',#{QueryName}),'%') order by uploadDate desc limit #{start_index},#{end_index}
+</select>
+
+<resultMap type="AttachmentInfo" id="GetAttachmentInfo">
+	<id property="attachmentId" column="attachmentId"/>
+	<result property="attachmentName" column="attachmentName"/>
+	<result property="attachmentSize" column="attachmentSize"/>
+	<result property="uploadDate" column="uploadDate"/>
+	
+	<association property="user" column="uploadUser" javaType="User">
+		<id property="userId" column="userId"/>
+		<result property="userName" column="userName"/>
+		<result property="password" column="password"/>
+		<result property="admin_flag" column="admin_flag"/>
+	</association>
+	
+	<association property="article" column="articleId" javaType="Article">
+		<id property="articleId" column="articleId"/>
+		<result property="subject" column="subject"/>
+		<result property="contentFileName" column="contentFileName"/>
+		<result property="publishDate" column="publishDate"/>
+		<result property="publishUser" column="publishUser"/>
+		<result property="courseId" column="courseId"/>
+	</association>
+</resultMap>
+
+<delete id="deleteAttachment" parameterType="int">
+   delete from Attachment where attachmentId=#{attachmentId}
+</delete>
+	
+</mapper>
